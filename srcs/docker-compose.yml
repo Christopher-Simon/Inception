@@ -1,5 +1,7 @@
 services:
   nginx:
-    build: ./nginx
+    build: ./requirements/nginx
     ports:
       - "443:443"
+  wordpress:
+    
