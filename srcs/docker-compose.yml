@@ -1,7 +1,30 @@
 services:
-  nginx:
+  my_nginx:
+    image: nginx:mine
+    restart: always
     build: ./requirements/nginx
     ports:
       - "443:443"
-  wordpress:
-    
+  my_wordpress:
+    image: wordpress:mine
+    restart: always
+    build: ./requirements/wordpress
+    volumes:
+      - vol_wp:/app
+  my_mariadb:
+    image: mariadb:mine
+    restart: always
+    build: ./requirements/mariadb
+    volumes:
+      - vol_mariadb:/var/lib/mysql
+volumes:
+  vol_wp:
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/chsimon/data/wordpress
+  vol_mariadb:
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/chsimon/data/mariadb
