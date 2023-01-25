@@ -10,7 +10,7 @@ services:
     restart: always
     build: ./requirements/wordpress
     volumes:
-      - vol_wp:/app
+      - vol_wp:/src
   my_mariadb:
     image: mariadb:mine
     restart: always

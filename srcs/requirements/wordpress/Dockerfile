@@ -6,8 +6,8 @@ RUN apt update && apt install -y curl wget  \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp \
     && apt -y install php7.3-cli php7.3-common php7.3-curl php7.3-mbstring php7.3-mysql php7.3-xml 
-RUN wp --allow-root core download 
-RUN mkdir /app && touch /app/zizi 
+RUN mkdir /src && wp --allow-root core download --path=/src
 # use --allow-root with wp
 
 #TODO : INSTALL PHP-FPM
+CMD ["sleep", "infinity"]
