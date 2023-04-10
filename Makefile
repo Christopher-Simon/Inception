@@ -18,13 +18,15 @@ down:
 	docker compose -f ./srcs/docker-compose.yml down
 
 clean: down
-	docker volume prune
-	sudo rm -rf /home/chsimon/data/wordpress
-	sudo rm -rf /home/chsimon/data/mariadb
+	docker system prune -af
+	docker volume prune -f
 
 fclean : clean
 	sudo rm -rf /home/chsimon/data/wordpress
 	sudo rm -rf /home/chsimon/data/mariadb
 
 re: fclean all
+
+log :
+	docker compose -f srcs/docker-compose.yml logs
 

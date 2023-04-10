@@ -6,7 +6,6 @@ RUN chmod +x /install-wordpress.sh
 RUN mkdir -p /data/www/html \
 		&& mkdir -p /run/php \
 		&& chown -R www-data:www-data /run/php \
-    && echo "<?php phpinfo(); ?>" > /data/www/html/index.php \
     && apt-get update \
     && apt-get install \
     php7.3 php7.3-fpm\
@@ -25,6 +24,5 @@ RUN sed -i 's/;daemonize = yes/daemonize = no/' /etc/php/7.3/fpm/php-fpm.conf \
 RUN wget -O /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
 
-# RUN /install-wordpress.sh
 
 CMD ["sh", "/install-wordpress.sh"]

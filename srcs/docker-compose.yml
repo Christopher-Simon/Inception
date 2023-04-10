@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   nginx:
-    build: ./nginx
+    build: ./requirements/nginx
     image: nginx:mine
     container_name: nginx
 
@@ -18,7 +18,7 @@ services:
     restart: always
 
   wordpress:
-    build: ./wordpress
+    build: ./requirements/wordpress
     image: wordpress:mine
     container_name: wordpress
 
@@ -34,7 +34,7 @@ services:
     restart: always
 
   mariadb:
-    build: ./mariadb
+    build: ./requirements/mariadb
     image: mariadb:mine
     container_name: mariadb
 
