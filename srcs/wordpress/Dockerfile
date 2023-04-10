@@ -25,6 +25,6 @@ RUN sed -i 's/;daemonize = yes/daemonize = no/' /etc/php/7.3/fpm/php-fpm.conf \
 RUN wget -O /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
 
-RUN /install-wordpress.sh
+# RUN /install-wordpress.sh
 
-CMD ["php-fpm7.3", "--nodaemonize"]
+CMD ["sh", "/install-wordpress.sh"]

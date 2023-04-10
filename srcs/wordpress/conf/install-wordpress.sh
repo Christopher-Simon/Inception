@@ -38,3 +38,6 @@ if [ ! -f /data/www/html/wp-config.php ]; then
 		--role=author
 
 fi
+
+
+exec php-fpm7.3 --nodaemonize

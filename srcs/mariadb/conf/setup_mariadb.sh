@@ -22,3 +22,8 @@ mysql -uroot -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('$DB_ROOT_PASSWO
 echo "Set pass for root"
 mysql -uroot -e "FLUSH PRIVILEGES;"
 echo "Done"
+
+
+mysqladmin -uroot -p$DB_ROOT_PASSWORD shutdown
+
+exec mysqld
