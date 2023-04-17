@@ -15,12 +15,11 @@ services:
     env_file:
       - .env
 
-    restart: always
+    restart: unless-stopped
 
   wordpress:
     build: ./requirements/wordpress
     image: wordpress:mine
-    container_name: wordpress
 
     networks:
       - inception

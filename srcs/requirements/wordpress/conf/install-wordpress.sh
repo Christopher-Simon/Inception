@@ -29,8 +29,7 @@ if [ ! -f /data/www/html/wp-config.php ]; then
 				--title="Inception" \
 				--admin_user="$WP_ADMIN_USER" \
 				--admin_password="$WP_ADMIN_PASSWORD" \
-				--admin_email="$WP_ADMIN_USER@example.com" \
-				--skip-email
+				--admin_email="$WP_ADMIN_USER@example.com" 
 
 		wp user create "$WP_USER" \
 			"$WP_USER@example.com" \
